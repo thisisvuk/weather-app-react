@@ -1,0 +1,231 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+
+:root{
+    --upper-margin:2rem 5rem;
+}
+
+
+
+/* highlight content */
+/* .upper-part{
+    background-color: khaki;
+}
+
+.search-bar{
+    background-color: tomato;
+}
+
+.right{
+    background-color: white;
+}
+.left{
+    background-color: white;
+}
+*/
+/* .lower-part{
+    background-color: lawngreen;
+}  */
+/* end of highlight content */
+
+
+.container{
+
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.search-bar{
+    flex: 0 0 2rem;
+    margin: 0em 2em;
+}
+.upper-part{
+   
+    flex: 2 1 0;
+
+    /* interior */
+    display: flex;
+
+}
+
+.left{
+    flex: 1 1 0;
+    margin: var(--upper-margin);
+}
+
+.right{
+    flex: 1 1 0;
+    margin: var(--upper-margin);
+}
+.lower-part{
+    flex: 1 1 0;
+}
+.container::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+.currentWeatherCard{
+    font-family: 'Lato', sans-serif;
+    position: relative; 
+    z-index: 100;
+    height: 100%;
+    color: white;
+}
+.icon{
+    font-size: 7rem;
+    color: white;
+    position: relative; 
+     z-index: 100;
+}
+
+.currentWeather-img p{
+    text-transform: capitalize;
+    font-size: 2rem;
+    /* font-weight: bold; */
+    margin: 0.2rem 0px;
+}
+.currentWeather-location{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.currentWeather-temperature{
+    font-family: 'Lato', sans-serif;
+    margin: 1rem 0rem;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+.currentWeather-temperature p{
+    display: inline;
+}
+.currentWeather-temperature p::before{
+    content: "\00B0";
+    font-size: inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    /* position: absolute; */
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*  LOWER PART || WEATHER CARD */
+
+
+.lower-part{
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    overflow: auto;
+    padding-left: 2rem;
+}
+.weather-card{
+    /* position: relative; */
+    z-index: 100;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    padding: 1rem;
+    /* margin: 0px 2rem; */
+    /* background-color: white; */
+    width: 10vw;
+    height: 20vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.weather-card:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 3px rgba(0,0,0,.5);
+
+}
+.weather-card-date{
+    font-size: 1rem;
+    text-transform: capitalize;
+
+}
+.weather-card-icon{
+    font-size: 3.5rem;
+}
+
+.weather-card-temperature p{
+    display: inline;
+    /* margin: 0px; */
+}
+
+.weather-card-temperature p::before{
+    content: '\00B0';
+}
+.weather-card-weather-description{
+    text-transform: capitalize;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
+
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* RESPONSIVE DESIGN */
+
+
+@media screen and (max-width: 750px){
+    .upper-part{
+        display: grid;
+        place-items: center;
+    }
+
+    .left{
+        margin: 0px auto;
+        /* width: fit-content; */
+    }
+    .right{
+        display: none;
+    }
+    .search-bar{
+        display: none;
+    }
+    .weather-card{
+        font-size: 0.75rem;
+        margin: 0px 1rem;
+    }
+    .weather-card-weather-description{
+        margin: 0px;
+    }
+    .weather-card-temperature{
+        font-size: 1.25rem;
+    }
+    .icon{
+        /* text-align: center; */
+        font-size: 5rem;
+        /* background-color: rgba(255, 255, 255, 0.2); */
+    }
+    .currentWeather-temperature{
+        font-size: 3rem;
+    }
+    
+    
+    
+}
+
+@media screen and (max-height: 570px){
+    .left{
+        margin: 0.75rem 5rem;
+    }
+    .weather-card-weather-description{
+        margin: 0px;
+    }
+
+}
